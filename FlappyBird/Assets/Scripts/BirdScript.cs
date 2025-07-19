@@ -3,7 +3,7 @@ using UnityEngine;
 public class BirdScript : MonoBehaviour
 {
     public Rigidbody2D _rigidBody2D;
-
+    public float _flapStrength = 12;
     void Start()
     {
         
@@ -14,7 +14,7 @@ public class BirdScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _rigidBody2D.linearVelocity = Vector2.up * 10;
+            _rigidBody2D.linearVelocity = Vector2.up * _flapStrength;
         }
     }
 }
