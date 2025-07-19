@@ -6,12 +6,13 @@ public class PipeSpawnScript : MonoBehaviour
     public float _spawnRate = 3.5f;
     public float _heightOffset = 8;
     public float _widthOffset = 5;
+    public float _pipeStartPosition = 30;
 
     private float _timer = 0;
     
     void Start()
     {
-        SpawnPipe();
+        SpawnPipe(true);
     }
 
     void Update()
@@ -27,12 +28,12 @@ public class PipeSpawnScript : MonoBehaviour
         }  
     }
 
-    private void SpawnPipe()
+    private void SpawnPipe(bool isStart = false)
     {
         float lowestPoint = transform.position.y - _heightOffset;
         float highestOffset = transform.position.y + _heightOffset;
-        float leftMostPoint = transform.position.x - _widthOffset;
-        float rightMostOffset = transform.position.x + _widthOffset;
+        float leftMostPoint = isStart ? _pipeStartPosition : transform.position.x - _widthOffset;
+        float rightMostOffset = isStart ? _pipeStartPosition : transform.position.x + _widthOffset;
 
         Instantiate(_pipe, new Vector3(Random.Range(leftMostPoint, rightMostOffset), Random.Range(lowestPoint, highestOffset), 0), transform.rotation);
     }

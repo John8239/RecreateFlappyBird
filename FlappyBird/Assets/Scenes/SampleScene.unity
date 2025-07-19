@@ -555,6 +555,7 @@ MonoBehaviour:
   _spawnRate: 3.5
   _heightOffset: 8
   _widthOffset: 5
+  _pipeStartPosition: 30
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
