@@ -16,6 +16,7 @@ public class PipeScript : MonoBehaviour
         if (transform.position.x < _deleteCoordinate)
         {
             Destroy(gameObject);
+            Debug.Log("Pipe Deleted");
         }
     }
 }
