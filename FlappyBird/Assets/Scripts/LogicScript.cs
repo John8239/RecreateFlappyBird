@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class LogicScript : MonoBehaviour
@@ -11,5 +12,10 @@ public class LogicScript : MonoBehaviour
     {
         _scoreCount++;
         _scoreText.text = _scoreCount.ToString();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
